@@ -2,7 +2,7 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "build main",
             "type": "shell",
             "group": {
                 "kind": "build",
@@ -19,45 +19,7 @@
             },
             "args": [
                 "-c",
-                "make"
-            ]
-        },
-        {
-            "label": "build & run",
-            "type": "shell",
-            "group": {
-                "kind": "test",
-                "isDefault": true
-            },
-            "windows": {
-                "command": "powershell"
-            },
-            "linux": {
-                "command": "bash"
-            },
-            "osx": {
-                "command": "bash"
-            },
-            "args": [
-                "-c",
-                "'make run'"
-            ]
-        },
-        {
-            "label": "clean",
-            "type": "shell",
-            "windows": {
-                "command": "powershell"
-            },
-            "linux": {
-                "command": "bash"
-            },
-            "osx": {
-                "command": "bash"
-            },
-            "args": [
-                "-c",
-                "'make clean'"
+                "make main"
             ]
         }
     ]

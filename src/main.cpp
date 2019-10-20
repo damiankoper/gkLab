@@ -1,5 +1,5 @@
 #include <GL/glut.h>
-
+#include "XD.hpp"
 //Drawing funciton
 void draw(void)
 {
@@ -13,12 +13,15 @@ void draw(void)
 //Main program
 int main(int argc, char **argv)
 {
+  XD *xd = new XD();
   glutInit(&argc, argv);
+  
   //Simple buffer
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB );
   glutInitWindowPosition(50,25);
   glutInitWindowSize(500,250);
   glutCreateWindow("Green window");
+
   //Call to the drawing function
   glutDisplayFunc(draw);
   glutMainLoop();
