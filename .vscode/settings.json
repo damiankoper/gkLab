@@ -1,4 +1,4 @@
 {
   "latex-workshop.latex.outDir": "%DIR%/../out",
-  "C_Cpp.default.configurationProvider": "vector-of-bool.cmake-tools"
+  "editor.wordWrap": "on"
 }

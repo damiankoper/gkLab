@@ -1,3 +1,9 @@
 \@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
 \babel@toc {polish}{}
 \etoc@startlocaltoc {1}
+\contentsline {section}{\numberline {1}OpenGL - podstawy}{3}{section.1}% 
+\contentsline {subsection}{\numberline {1.1}Bazowa aplikacja}{3}{subsection.1.1}% 
+\contentsline {subsection}{\numberline {1.2}Dywan Sierpi\IeC {\'n}skiego}{4}{subsection.1.2}% 
+\contentsline {subsubsection}{\numberline {1.2.1}Rysowanie rekurencyjne}{4}{subsubsection.1.2.1}% 
+\contentsline {subsubsection}{\numberline {1.2.2}Rysowanie iteracyjne}{6}{subsubsection.1.2.2}% 
+\contentsline {subsubsection}{\numberline {1.2.3}Losowe kolory i perturbacje}{7}{subsubsection.1.2.3}% 

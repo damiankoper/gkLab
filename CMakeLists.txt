@@ -8,5 +8,6 @@ include_directories( ${OPENGL_INCLUDE_DIRS}  ${GLUT_INCLUDE_DIRS} include)
 
 file(GLOB_RECURSE SRC_FILES ${PROJECT_SOURCE_DIR}/src/*.cpp)
 
+set(CMAKE_BUILD_TYPE "Debug")
 add_executable(main ${SRC_FILES})
 target_link_libraries(main ${OPENGL_LIBRARIES} ${GLUT_LIBRARY} )
