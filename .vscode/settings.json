@@ -1,4 +1,23 @@
 {
   "latex-workshop.latex.outDir": "%DIR%/../out",
-  "editor.wordWrap": "on"
+  "editor.wordWrap": "on",
+  "spellright.language":[
+    "English (American)",
+    "English (British)",
+    "Polish"
+  ],
+  "spellright.ignoreRegExpsByClass": {
+    "markdown": [ "/&amp;/g", "/&nbsp;/g" ],
+    "cpp": [ "/#include\\s+\\\".+\\\"/g" ],
+    "html": [ "/<script>[^]*?</script>/gm" ],
+    "latex": [ 
+      "/\\\\begin{lstlisting}[^]*?\\\\end{lstlisting}/gm",
+      "/\\\\begin{lstinline}[^]*?/gm" 
+    ]
+  },
+  "spellright.documentTypes": [
+    "markdown",
+    "latex",
+    "plaintext"
+  ]
 }

@@ -6,4 +6,4 @@
 \contentsline {subsection}{\numberline {1.2}Dywan Sierpi\IeC {\'n}skiego}{4}{subsection.1.2}% 
 \contentsline {subsubsection}{\numberline {1.2.1}Rysowanie rekurencyjne}{4}{subsubsection.1.2.1}% 
 \contentsline {subsubsection}{\numberline {1.2.2}Rysowanie iteracyjne}{6}{subsubsection.1.2.2}% 
-\contentsline {subsubsection}{\numberline {1.2.3}Losowe kolory i perturbacje}{7}{subsubsection.1.2.3}% 
+\contentsline {subsubsection}{\numberline {1.2.3}Losowe kolory, perturbacje i skalowanie}{7}{subsubsection.1.2.3}% 

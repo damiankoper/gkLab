@@ -106,7 +106,7 @@ void draw(void)
   glClearColor(0, 0, 0, 1);
   glClear(GL_COLOR_BUFFER_BIT);
 
-  carpet(3, 1.8f, 0.05f);
+  carpet(3, 1.f, 0.05f);
   //carpetIt(4, 1.8f, 0.05f);
 
   //Draw order

@@ -145,33 +145,6 @@ main/fast:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
 .PHONY : main/fast
 
-src/XD.o: src/XD.cpp.o
-
-.PHONY : src/XD.o
-
-# target to build an object file
-src/XD.cpp.o:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/XD.cpp.o
-.PHONY : src/XD.cpp.o
-
-src/XD.i: src/XD.cpp.i
-
-.PHONY : src/XD.i
-
-# target to preprocess a source file
-src/XD.cpp.i:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/XD.cpp.i
-.PHONY : src/XD.cpp.i
-
-src/XD.s: src/XD.cpp.s
-
-.PHONY : src/XD.s
-
-# target to generate assembly for a file
-src/XD.cpp.s:
-	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/XD.cpp.s
-.PHONY : src/XD.cpp.s
-
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -210,9 +183,6 @@ help:
 	@echo "... main"
 	@echo "... rebuild_cache"
 	@echo "... package"
-	@echo "... src/XD.o"
-	@echo "... src/XD.i"
-	@echo "... src/XD.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

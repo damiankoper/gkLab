@@ -1,9 +1,9 @@
 \section{OpenGL - podstawy}
 
-OpenGL (\textit{Open Graphics Library}) stanowi otwarty i~uniwersalny interfejs umożliwiający renderowanie grafiki 2D i~3D. Obliczenia realizowane są dzięki bezpośredniej interakcji z~GPU, który, mając zaimplementowane potrzebne operacje, może szybko przeprowadzać obliczenia. Natura abstrakcyjnego interfejsu jakim jest OpenGL pozwala tworzyć przenośne programy renderujace grafikę bez zważania na platformę uruchomienia, gdzie obliczenia mogą być realizowane programowo jak i~sprzętowo.
+OpenGL (\textit{Open Graphics Library}) stanowi otwarty i~uniwersalny interfejs umożliwiający renderowanie grafiki 2D i~3D. Obliczenia realizowane są dzięki bezpośredniej interakcji z~GPU, który, mając zaimplementowane potrzebne operacje, może szybko przeprowadzać obliczenia. Natura abstrakcyjnego interfejsu jakim jest OpenGL pozwala tworzyć przenośne programy renderujące grafikę bez zważania na platformę uruchomienia, gdzie obliczenia mogą być realizowane programowo jak i~sprzętowo.
 
 \subsection{Bazowa aplikacja}
-Biblioteką, która tworzy środowisko uruchomieniowe dla wyświetlania wyrenderowanej grafiki i~realizuje operacje wejścia-wyjścia jest GLUT (\textit{OpenGL Utility Toolkit}). Prosty program wyświetlajacy okno można stworzyć niewielkim nakładem pracy.
+Biblioteką, która tworzy środowisko uruchomieniowe dla wyświetlania wyrenderowanej grafiki i~realizuje operacje wejścia-wyjścia jest GLUT (\textit{OpenGL Utility Toolkit}). Prosty program wyświetlający okno można stworzyć niewielkim nakładem pracy.
 
 \begin{lstlisting}[language=C++, caption=Bazowy program wyświetlający czarne okno.]
 #include <GL/glut.h>
@@ -27,7 +27,8 @@ int main(int argc, char **argv)
 }
 \end{lstlisting}
 
-W funkcji \lstinline{main} w pierwszej kolejności inicjalizowana jest sama aplikacja, a następnie wszystkie jej parametry. Następnie do biblioteki GLUT przekazywana poprzez wskaźnik jest funkcja \lstinline{draw}, ktora jest odpowedzialna za bezpośrednią interakcję z API OpenGL, a zatem za rysowanie właściwych elementów w wyświetlonym oknie. W tej wersji funkcja \lstinline{draw} czyści okno kolorem czarnym i opróżnia bufor przekazując dane na ekran.
+W funkcji \lstinline{main} w pierwszej kolejności inicjalizowana jest sama aplikacja, a następnie wszystkie jej parametry. Do biblioteki GLUT przekazywana poprzez wskaźnik jest funkcja \lstinline{draw}. 
+Jest ona odpowiedzialna za bezpośrednią interakcję z API OpenGL, a zatem za rysowanie właściwych elementów w wyświetlonym oknie. W tej wersji funkcja \lstinline{draw} czyści okno kolorem czarnym i opróżnia bufor przekazując dane na ekran.
 
 \subsection{Dywan Sierpińskiego}
 Dywan Sierpińskiego jest jest fraktalem otrzymanym z kwadratu podzielonego na 9 mniejszych kwadratów, z których usuwany jest środkowy. Procedura ta jest rekurencyjnie powtarzana dla pozostałych ośmiu kwadratów.
@@ -107,11 +108,21 @@ void carpetIt(int levels, float a)
   }
 \end{lstlisting}
 
-\subsubsection{Losowe kolory i perturbacje}
-Losowe kolory osiągnięto poprzez wywołanie funkcji \lstinline{glColor3ub(0, randChar(), 0)} przed wywołaniem funkcji interfejsu OpenGL definiującą składowy wierzchołek trojąta tworzącego kwadrat, gdzie funkcja \lstinline{randChar} zwraca liczbę z przedziału $<0;255>$. Mając kontrolę nad rysowanem każdego kwadratu można wprowadzić również losowe jego przesunięcie w osi X i Y.
+\subsubsection{Losowe kolory, perturbacje i skalowanie}
+Losowe kolory osiągnięto poprzez wywołanie funkcji \lstinline{glColor3ub(0, randChar(), 0)} przed wywołaniem funkcji interfejsu OpenGL definiującą składowy wierzchołek trójkąta tworzącego kwadrat, gdzie funkcja \lstinline{randChar} zwraca liczbę z przedziału $<0;255>$. Mając kontrolę nad rysowaniem każdego kwadratu można wprowadzić również losowe jego przesunięcie w osi X i Y.
 
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.4\linewidth]{img/serpinski_3_s3.png}
-  \caption{Dywan Sierpińskiego po 3 iteracjach z losowym kolorem zielonym oraz perturbacjami.}
+Funkcja rysująca w swoim drugim parametrze przyjmuje długość boku największego kwadratu, co pozwala na skalowanie figury.
+
+
+\begin{figure}[H]
+  \
+  \begin{minipage}[t]{.45\linewidth}
+  \includegraphics[width=\linewidth]{serpinski_3_s3}
+      \caption{Dywan Sierpińskiego po 3 iteracjach z losowym kolorem zielonym oraz perturbacjami.}
+    \end{minipage}
+  \hspace{.05\linewidth}
+  \begin{minipage}[t]{0.45\linewidth}
+      \includegraphics[width=\linewidth]{serpinski_3_s4}
+      \caption{Dywan Sierpińskiego po 3 iteracjach z losowym kolorem zielonym, perturbacjami oraz w innej skali.}
+    \end{minipage}
 \end{figure}
