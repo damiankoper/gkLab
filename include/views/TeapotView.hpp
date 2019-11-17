@@ -11,5 +11,6 @@ public:
     void render();
     void idle();
     void timer();
+    void onKey(unsigned char key, int x, int y);
     void onLeave();
 };

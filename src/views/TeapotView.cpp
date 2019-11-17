@@ -2,6 +2,7 @@
 #include <GL/glut.h>
 #include <NumericUtils.hpp>
 #include <DrawingUtils.hpp>
+#include "ViewEngine/ViewEngine.hpp"
 TeapotView::TeapotView()
 {
 }
@@ -12,7 +13,7 @@ TeapotView::~TeapotView()
 
 std::string TeapotView::getName()
 {
-    return "empty";
+    return "teapot";
 }
 
 void TeapotView::init()
@@ -34,12 +35,30 @@ void TeapotView::render()
 
 void TeapotView::timer()
 {
+    glutPostRedisplay();
 }
 
 void TeapotView::idle()
 {
 }
-
+void TeapotView::onKey(unsigned char key, int x, int y)
+{
+    switch (key)
+    {
+    case '1':
+        ViewEngine::g().setCurrent("teapot");
+        break;
+    case '2':
+        ViewEngine::g().setCurrent("dotEgg");
+        break;
+    case '3':
+        ViewEngine::g().setCurrent("meshEgg");
+        break;
+    case '4':
+        ViewEngine::g().setCurrent("trianglesEgg");
+        break;
+    }
+}
 void TeapotView::onLeave()
 {
 }

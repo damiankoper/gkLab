@@ -312,6 +312,33 @@ src/views/DotEggView.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/DotEggView.cpp.s
 .PHONY : src/views/DotEggView.cpp.s
 
+src/views/MeshEggView.o: src/views/MeshEggView.cpp.o
+
+.PHONY : src/views/MeshEggView.o
+
+# target to build an object file
+src/views/MeshEggView.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/MeshEggView.cpp.o
+.PHONY : src/views/MeshEggView.cpp.o
+
+src/views/MeshEggView.i: src/views/MeshEggView.cpp.i
+
+.PHONY : src/views/MeshEggView.i
+
+# target to preprocess a source file
+src/views/MeshEggView.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/MeshEggView.cpp.i
+.PHONY : src/views/MeshEggView.cpp.i
+
+src/views/MeshEggView.s: src/views/MeshEggView.cpp.s
+
+.PHONY : src/views/MeshEggView.s
+
+# target to generate assembly for a file
+src/views/MeshEggView.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/MeshEggView.cpp.s
+.PHONY : src/views/MeshEggView.cpp.s
+
 src/views/TeapotView.o: src/views/TeapotView.cpp.o
 
 .PHONY : src/views/TeapotView.o
@@ -338,6 +365,33 @@ src/views/TeapotView.s: src/views/TeapotView.cpp.s
 src/views/TeapotView.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TeapotView.cpp.s
 .PHONY : src/views/TeapotView.cpp.s
+
+src/views/TrianglesEggView.o: src/views/TrianglesEggView.cpp.o
+
+.PHONY : src/views/TrianglesEggView.o
+
+# target to build an object file
+src/views/TrianglesEggView.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TrianglesEggView.cpp.o
+.PHONY : src/views/TrianglesEggView.cpp.o
+
+src/views/TrianglesEggView.i: src/views/TrianglesEggView.cpp.i
+
+.PHONY : src/views/TrianglesEggView.i
+
+# target to preprocess a source file
+src/views/TrianglesEggView.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TrianglesEggView.cpp.i
+.PHONY : src/views/TrianglesEggView.cpp.i
+
+src/views/TrianglesEggView.s: src/views/TrianglesEggView.cpp.s
+
+.PHONY : src/views/TrianglesEggView.s
+
+# target to generate assembly for a file
+src/views/TrianglesEggView.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TrianglesEggView.cpp.s
+.PHONY : src/views/TrianglesEggView.cpp.s
 
 # Help Target
 help:
@@ -369,9 +423,15 @@ help:
 	@echo "... src/views/DotEggView.o"
 	@echo "... src/views/DotEggView.i"
 	@echo "... src/views/DotEggView.s"
+	@echo "... src/views/MeshEggView.o"
+	@echo "... src/views/MeshEggView.i"
+	@echo "... src/views/MeshEggView.s"
 	@echo "... src/views/TeapotView.o"
 	@echo "... src/views/TeapotView.i"
 	@echo "... src/views/TeapotView.s"
+	@echo "... src/views/TrianglesEggView.o"
+	@echo "... src/views/TrianglesEggView.i"
+	@echo "... src/views/TrianglesEggView.s"
 .PHONY : help
 
 

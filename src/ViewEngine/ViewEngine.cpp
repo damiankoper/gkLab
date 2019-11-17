@@ -26,6 +26,7 @@ void ViewEngine::setCurrent(std::string name)
     currentView = views[name];
 
     glutDisplayFunc([]() { ViewEngine::g().render(); });
+    glutKeyboardFunc([](unsigned char key, int x, int y) { ViewEngine::g().currentView->onKey(key, x, y); });
     //glutIdleFunc([]() { ViewEngine::g().currentView->idle(); });
 
     currentView->onEnter();
@@ -33,8 +34,13 @@ void ViewEngine::setCurrent(std::string name)
 
 void ViewEngine::render()
 {
-    glClearColor(0, 0, 0, 1);
-    glClear(GL_COLOR_BUFFER_BIT);
+    glEnable(GL_DEPTH_TEST);
+    glDepthMask(GL_TRUE);
+    glDepthFunc(GL_LEQUAL);
+    glDepthRange(0.0f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
+    glClearDepth(1.0f);
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
     currentView->render();
 

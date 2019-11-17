@@ -5,17 +5,9 @@
 #include "ViewEngine/ViewEngine.hpp"
 #include "views/TeapotView.hpp"
 #include "views/DotEggView.hpp"
+#include "views/MeshEggView.hpp"
+#include "views/TrianglesEggView.hpp"
 using namespace std;
-
-//Drawing funciton
-void draw(void)
-{
-  //Background color
-  glClearColor(0, 0, 0, 1);
-  glClear(GL_COLOR_BUFFER_BIT);
-  //Draw order
-  glFlush();
-}
 
 void changeSize(GLsizei horizontal, GLsizei vertical)
 {
@@ -41,14 +33,16 @@ int main(int argc, char **argv)
   glutInit(&argc, argv);
 
   //Simple buffer
-  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
   glutInitWindowPosition(50, 25);
   glutInitWindowSize(1280, 720);
   glutCreateWindow("Lab 2");
 
   ViewEngine::g().add(new TeapotView());
   ViewEngine::g().add(new DotEggView());
-  ViewEngine::g().setCurrent("dotEgg");
+  ViewEngine::g().add(new MeshEggView());
+  ViewEngine::g().add(new TrianglesEggView());
+  ViewEngine::g().setCurrent("teapot");
 
   glutReshapeFunc(changeSize);
   glutMainLoop();

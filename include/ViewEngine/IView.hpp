@@ -10,6 +10,7 @@ public:
     virtual void render() = 0;
     virtual void idle() = 0;
     virtual void timer() = 0;
+    virtual void onKey(unsigned char key, int x, int y) = 0;
     virtual void onLeave() = 0;
 
     virtual ~IView(){};

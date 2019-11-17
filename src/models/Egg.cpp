@@ -32,7 +32,6 @@ Egg::Egg(int n)
             point.color = color;
         }
         color = points[points.size() / 2 - 1][0].color;
-
         for (auto &&point : points[points.size() / 2])
         {
             point.color = color;
@@ -111,9 +110,9 @@ void Egg::renderMesh()
         }
     }
 
-    for (int i = n / 2; i < n; i++)
+    for (size_t i = n / 2; i < n; i++)
     {
-        for (int j = 0; j < n - 1; j++)
+        for (size_t j = 0; j < n - 1; j++)
         {
             if (i == n - 1)
             {
@@ -137,9 +136,9 @@ void Egg::renderMesh()
 
     points[0][0].drawWithColor();
     points[n - 1][n - 1].drawWithColor();
-    for (int i = 1; i < n / 2 + 1; i++)
+    for (size_t i = 1; i < n / 2 + 1; i++)
     {
-        for (int j = 0; j < n - 1; j++)
+        for (size_t j = 0; j < n - 1; j++)
         {
             points[i][j].drawWithColor();
             points[i - 1][j + 1].drawWithColor();
@@ -150,6 +149,49 @@ void Egg::renderMesh()
             }
         }
     }
+
+    glEnd();
+}
+
+void Egg::renderTriangles()
+{
+    glBegin(GL_TRIANGLES);
+    for (size_t i = 1; i < n; i++)
+    {
+        for (size_t j = 1; j < n; j++)
+        {
+            points[i][j].drawWithColor();
+            points[i][j - 1].drawWithColor();
+            points[i - 1][j].drawWithColor();
+
+            points[i - 1][j - 1].drawWithColor();
+            points[i - 1][j].drawWithColor();
+            points[i][j - 1].drawWithColor();
+            if (j == 1)
+            {
+                points[n - i][0].drawWithColor();
+                points[i][n - 1].drawWithColor();
+                points[i - 1][n - 1].drawWithColor();
+
+                if (n - i + 1 < n)
+                {
+                    points[n - i][0].drawWithColor();
+                    points[n - i + 1][0].drawWithColor();
+                    points[i - 1][n - 1].drawWithColor();
+                }
+            }
+        }
+    }
+    for (size_t j = 1; j < n; j++)
+    {
+        points[n - 1][j].drawWithColor();
+        points[n - 1][j - 1].drawWithColor();
+        points[0][0].drawWithColor();
+    }
+
+    points[n - 1][n - 1].drawWithColor();
+    points[1][0].drawWithColor();
+    points[0][0].drawWithColor();
 
     glEnd();
 }
