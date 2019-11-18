@@ -195,3 +195,33 @@ void Egg::renderTriangles()
 
     glEnd();
 }
+
+void Egg::renderComplex()
+{
+    for (size_t i = 0; i < n - 1; i++)
+    {
+        glBegin(GL_TRIANGLE_STRIP);
+        for (size_t j = 0; j < n; j++)
+        {
+            points[i][j].drawWithColor();
+            points[i + 1][j].drawWithColor();
+        }
+         if (n - i - 1 >= 0 && n - i < n)
+        {
+            points[n - i][0].drawWithColor();
+            points[n - i - 1][0].drawWithColor();
+        } 
+        glEnd();
+    }
+    glBegin(GL_TRIANGLE_STRIP);
+    points[0][0].drawWithColor();
+    points[1][n - 1].drawWithColor();
+    for (size_t i = 0; i < n; i++)
+    {
+        points[0][0].drawWithColor();
+        points[n - 1][i].drawWithColor();
+    }
+    points[0][0].drawWithColor();
+    points[1][0].drawWithColor();
+    glEnd();
+}

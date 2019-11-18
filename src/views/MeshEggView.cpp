@@ -60,6 +60,9 @@ void MeshEggView::onKey(unsigned char key, int x, int y)
     case '4':
         ViewEngine::g().setCurrent("trianglesEgg");
         break;
+    case '5':
+        ViewEngine::g().setCurrent("complexEgg");
+        break;
     }
 }
 void MeshEggView::onLeave()

@@ -5,13 +5,14 @@ class Egg
 {
 
 public:
-    Egg(int n = 16);
+    Egg(int n = 32);
     ~Egg();
 
     std::vector<std::vector<Point>> getPoints();
     void renderPoints();
     void renderMesh();
     void renderTriangles();
+    void renderComplex();
 
 private:
     int n;

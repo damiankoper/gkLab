@@ -56,6 +56,28 @@ CMAKE_BINARY_DIR = /home/damian_koper/Documents/GitHub/gkLab
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
+
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target package_source
+package_source:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/damian_koper/Documents/GitHub/gkLab/CPackSourceConfig.cmake
+.PHONY : package_source
+
+# Special rule for the target package_source
+package_source/fast: package_source
+
+.PHONY : package_source/fast
+
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
@@ -67,16 +89,16 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target package
+package: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool..."
+	/usr/bin/cpack --config ./CPackConfig.cmake
+.PHONY : package
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
+# Special rule for the target package
+package/fast: package
 
-.PHONY : edit_cache/fast
+.PHONY : package/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -285,6 +307,33 @@ src/models/Egg.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/models/Egg.cpp.s
 .PHONY : src/models/Egg.cpp.s
 
+src/views/ComplexEggView.o: src/views/ComplexEggView.cpp.o
+
+.PHONY : src/views/ComplexEggView.o
+
+# target to build an object file
+src/views/ComplexEggView.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/ComplexEggView.cpp.o
+.PHONY : src/views/ComplexEggView.cpp.o
+
+src/views/ComplexEggView.i: src/views/ComplexEggView.cpp.i
+
+.PHONY : src/views/ComplexEggView.i
+
+# target to preprocess a source file
+src/views/ComplexEggView.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/ComplexEggView.cpp.i
+.PHONY : src/views/ComplexEggView.cpp.i
+
+src/views/ComplexEggView.s: src/views/ComplexEggView.cpp.s
+
+.PHONY : src/views/ComplexEggView.s
+
+# target to generate assembly for a file
+src/views/ComplexEggView.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/ComplexEggView.cpp.s
+.PHONY : src/views/ComplexEggView.cpp.s
+
 src/views/DotEggView.o: src/views/DotEggView.cpp.o
 
 .PHONY : src/views/DotEggView.o
@@ -399,9 +448,11 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... rebuild_cache"
-	@echo "... main"
 	@echo "... edit_cache"
+	@echo "... package_source"
+	@echo "... main"
+	@echo "... rebuild_cache"
+	@echo "... package"
 	@echo "... src/DrawingUtils.o"
 	@echo "... src/DrawingUtils.i"
 	@echo "... src/DrawingUtils.s"
@@ -420,6 +471,9 @@ help:
 	@echo "... src/models/Egg.o"
 	@echo "... src/models/Egg.i"
 	@echo "... src/models/Egg.s"
+	@echo "... src/views/ComplexEggView.o"
+	@echo "... src/views/ComplexEggView.i"
+	@echo "... src/views/ComplexEggView.s"
 	@echo "... src/views/DotEggView.o"
 	@echo "... src/views/DotEggView.i"
 	@echo "... src/views/DotEggView.s"

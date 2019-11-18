@@ -7,6 +7,7 @@
 #include "views/DotEggView.hpp"
 #include "views/MeshEggView.hpp"
 #include "views/TrianglesEggView.hpp"
+#include "views/ComplexEggView.hpp"
 using namespace std;
 
 void changeSize(GLsizei horizontal, GLsizei vertical)
@@ -42,7 +43,8 @@ int main(int argc, char **argv)
   ViewEngine::g().add(new DotEggView());
   ViewEngine::g().add(new MeshEggView());
   ViewEngine::g().add(new TrianglesEggView());
-  ViewEngine::g().setCurrent("teapot");
+  ViewEngine::g().add(new ComplexEggView());
+  ViewEngine::g().setCurrent("complexEgg");
 
   glutReshapeFunc(changeSize);
   glutMainLoop();

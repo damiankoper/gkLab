@@ -1,47 +1,52 @@
-#include "views/TeapotView.hpp"
+#include "views/ComplexEggView.hpp"
 #include <GL/glut.h>
 #include <NumericUtils.hpp>
 #include <DrawingUtils.hpp>
 #include "ViewEngine/ViewEngine.hpp"
-TeapotView::TeapotView()
+ComplexEggView::ComplexEggView()
 {
 }
 
-TeapotView::~TeapotView()
+ComplexEggView::~ComplexEggView()
 {
 }
 
-std::string TeapotView::getName()
+std::string ComplexEggView::getName()
 {
-    return "teapot";
+    return "complexEgg";
 }
 
-void TeapotView::init()
-{
-}
-
-void TeapotView::onEnter()
+void ComplexEggView::init()
 {
 }
 
-void TeapotView::render()
+void ComplexEggView::onEnter()
+{
+}
+
+void ComplexEggView::render()
 {
     glLoadIdentity();
-    glRotated(-10, 1.0, 1.0, 0.0);
     DrawingUtils::axis();
-    NumericUtils::glSetRandColor();
-    glutWireTeapot(3.);
+    glRotated(-60., 1, 0, 0);
+    glRotated(eggRotation, 1, 0, 0);
+    glTranslated(0, -5., 0);
+    glPointSize(10.);
+    egg.renderComplex();
 }
-
-void TeapotView::timer()
+void ComplexEggView::timer()
 {
+    eggRotation += 1;
+    if (eggRotation > 360)
+        eggRotation = 0;
     glutPostRedisplay();
 }
 
-void TeapotView::idle()
+void ComplexEggView::idle()
 {
 }
-void TeapotView::onKey(unsigned char key, int x, int y)
+
+void ComplexEggView::onKey(unsigned char key, int x, int y)
 {
     switch (key)
     {
@@ -62,6 +67,6 @@ void TeapotView::onKey(unsigned char key, int x, int y)
         break;
     }
 }
-void TeapotView::onLeave()
+void ComplexEggView::onLeave()
 {
 }
