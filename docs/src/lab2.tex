@@ -1,0 +1,33 @@
+\newpage
+\section{Modelowanie obiektów 3D}
+\subsection{Bazowa aplikacja}
+Aplikacja bazowa, po zainicjowaniu niezbędnych elementów biblioteki \textit{GLUT}, oddaje sterowanie do utworzonej klasy \lstinline{ViewEngine}. Przechowuje one referencje na klasy, będące niezależnymi widokami. Widoki te posiadają zdefiniowane własne funkcje odpowiedzialne za renderowanie, obsługę zdarzeń, animację oraz obsługę zdarzeń związanych z cyklem życia widoku. Poprzez zmianę wartości wskaźnika na aktualny widok w klasie \lstinline{ViewEngine}, funkcje przekazane do biblioteki \textit{GLUT} zastępowane są funkcjami właściwego widoku. Każdy widok musi implementować interface \lstinline{iView} zdefiniowany następująco:
+
+\begin{lstlisting}[language=C++, caption=Interface IView.]
+class IView
+{
+public:
+    virtual std::string getName() = 0;
+    virtual void init() = 0;
+    virtual void onEnter() = 0;
+    virtual void render() = 0;
+    virtual void idle() = 0;
+    virtual void timer() = 0;
+    virtual void onKey(unsigned char key, int x, int y) = 0;
+    virtual void onLeave() = 0;
+
+    virtual ~IView(){};
+};
+\end{lstlisting}
+Widoku identyfikowane są za pomocą nazw zwracanych przez funkcję \lstinline{getName()}.
+Dzięki zaimplementowaniu wzorca Singleton w klasie \lstinline{ViewEngine} możliwe jest przełączanie widoku w dowolnym miejscu wywołania metody w programie.
+\begin{lstlisting}[language=C++, caption=Tworzeznie instancji widoków i ustawianie obecnego. Funkcja \lstinline{g} zwraca instancję klasy.]
+ViewEngine::g().add(new TeapotView());
+ViewEngine::g().add(/*inne widoki*/);
+ViewEngine::g().setCurrent("complexEgg");
+\end{lstlisting}
+\subsection{Model i generowanie punktów}
+
+\subsection{Rysowanie punktów i siatki}
+
+\subsection{Rysowanie bryły}

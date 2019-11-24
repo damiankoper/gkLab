@@ -7,3 +7,8 @@
 \contentsline {subsubsection}{\numberline {1.2.1}Rysowanie rekurencyjne}{4}{subsubsection.1.2.1}% 
 \contentsline {subsubsection}{\numberline {1.2.2}Rysowanie iteracyjne}{6}{subsubsection.1.2.2}% 
 \contentsline {subsubsection}{\numberline {1.2.3}Losowe kolory, perturbacje i skalowanie}{7}{subsubsection.1.2.3}% 
+\contentsline {section}{\numberline {2}Modelowanie obiekt\IeC {\'o}w 3D}{8}{section.2}% 
+\contentsline {subsection}{\numberline {2.1}Bazowa aplikacja}{8}{subsection.2.1}% 
+\contentsline {subsection}{\numberline {2.2}Model i generowanie punkt\IeC {\'o}w}{9}{subsection.2.2}% 
+\contentsline {subsection}{\numberline {2.3}Rysowanie punkt\IeC {\'o}w i siatki}{9}{subsection.2.3}% 
+\contentsline {subsection}{\numberline {2.4}Rysowanie bry\IeC {\l }y}{9}{subsection.2.4}% 
