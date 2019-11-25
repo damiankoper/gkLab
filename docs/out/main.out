@@ -4,5 +4,6 @@
 \BOOKMARK [1][-]{section.2}{Modelowanie obiekt\363w 3D}{}% 4
 \BOOKMARK [2][-]{subsection.2.1}{Bazowa aplikacja}{section.2}% 5
 \BOOKMARK [2][-]{subsection.2.2}{Model i generowanie punkt\363w}{section.2}% 6
-\BOOKMARK [2][-]{subsection.2.3}{Rysowanie punkt\363w i siatki}{section.2}% 7
-\BOOKMARK [2][-]{subsection.2.4}{Rysowanie bry\233y}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{Rysowanie modelu za pomoca punkt\363w, siatki i jako bry\233y}{section.2}% 7
+\BOOKMARK [2][-]{subsection.2.4}{Rysowanie siatki i bry\233y}{section.2}% 8
+\BOOKMARK [2][-]{subsection.2.5}{Animacja obrotu}{section.2}% 9

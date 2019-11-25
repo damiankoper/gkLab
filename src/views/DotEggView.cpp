@@ -27,7 +27,6 @@ void DotEggView::onEnter()
 void DotEggView::render()
 {
     glLoadIdentity();
-    //DrawingUtils::axis();
     glRotated(-60., 1, 0, 0);
     glRotated(eggRotation, 1, 1, 1);
     glTranslated(0, -5., 0);
@@ -37,8 +36,8 @@ void DotEggView::render()
 void DotEggView::timer()
 {
     eggRotation += 1;
-    if (eggRotation > 360)
-        eggRotation = 0;
+    if (eggRotation >= 360)
+        2 eggRotation = 0;
     glutPostRedisplay();
 }
 
