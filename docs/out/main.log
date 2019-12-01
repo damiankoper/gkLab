@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.9)  25 NOV 2019 12:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.11.9)  25 NOV 2019 17:02
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -776,6 +776,11 @@ File: img/egg_2.png Graphic file (type png)
 <use img/egg_2.png>
 Package pdftex.def Info: img/egg_2.png  used on input line 128.
 (pdftex.def)             Requested size: 225.21626pt x 195.27708pt.
+
+Underfull \hbox (badness 2626) in paragraph at lines 129--129
+[]\T1/cmr/bx/n/12 Rysunek 7: |\T1/cmr/m/n/12 Mo-del jajka zbu-do-wany
+ []
+
 <img/egg_3.png, id=314, 1281.78876pt x 716.6775pt>
 File: img/egg_3.png Graphic file (type png)
 <use img/egg_3.png>
@@ -800,7 +805,7 @@ Here is how much of TeX's memory you used:
  34 hyphenation exceptions out of 8191
  64i,8n,60p,770b,1895s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0600.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1200.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1440.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/eccc1440.600pk> </home/damian_koper/.texlive2019/texmf-var/fonts/pk/ljfour/jknappen/ec/ecxc2074.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on /home/damian_koper/Documents/GitHub/gkLab/docs/src/../out/main.pdf (14 pages, 1444005 bytes).
+Output written on /home/damian_koper/Documents/GitHub/gkLab/docs/src/../out/main.pdf (14 pages, 1443953 bytes).
 PDF statistics:
  768 PDF objects out of 1000 (max. 8388607)
  384 compressed objects within 4 object streams

@@ -19,5 +19,8 @@
     "markdown",
     "latex",
     "plaintext"
-  ]
+  ],
+  "files.associations": {
+    "cmath": "cpp"
+  }
 }

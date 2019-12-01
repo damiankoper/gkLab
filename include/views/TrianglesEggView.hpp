@@ -13,6 +13,8 @@ public:
     void idle();
     void timer();
     void onKey(unsigned char key, int x, int y);
+    void onMouse(int btn, int state, int x, int y);
+    void onMotion(GLsizei x, GLsizei y);
     void onLeave();
 
 private:

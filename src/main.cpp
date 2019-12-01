@@ -12,17 +12,10 @@ using namespace std;
 
 void changeSize(GLsizei horizontal, GLsizei vertical)
 {
-  GLfloat AspectRatio;
-  if (vertical == 0) // Zabezpieczenie przed dzieleniem przez 0
-    vertical = 1;
-  glViewport(0, 0, horizontal, vertical);
   glMatrixMode(GL_PROJECTION);
   glLoadIdentity();
-  AspectRatio = (GLfloat)horizontal / (GLfloat)vertical;
-  if (horizontal <= vertical)
-    glOrtho(-7.5, 7.5, -7.5 / AspectRatio, 7.5 / AspectRatio, 10.0, -10.0);
-  else
-    glOrtho(-7.5 * AspectRatio, 7.5 * AspectRatio, -7.5, 7.5, 10.0, -10.0);
+  gluPerspective(70, (float)horizontal / (float)vertical, 1.0, 30.0);
+  glViewport(0, 0, horizontal, vertical);
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
 }
@@ -39,12 +32,36 @@ int main(int argc, char **argv)
   glutInitWindowSize(1280, 720);
   glutCreateWindow("Lab 2");
 
+  ViewEngine::g().setKeyboardRouter([](unsigned char key) {
+    switch (key)
+    {
+    case '1':
+      ViewEngine::g().setCurrent("teapot");
+      break;
+    case '2':
+      ViewEngine::g().setCurrent("dotEgg");
+      break;
+    case '3':
+      ViewEngine::g().setCurrent("meshEgg");
+      break;
+    case '4':
+      ViewEngine::g().setCurrent("trianglesEgg");
+      break;
+    case '5':
+      ViewEngine::g().setCurrent("complexEgg");
+      break;
+    default:
+      return false;
+    }
+    return true;
+  });
+
   ViewEngine::g().add(new TeapotView());
   ViewEngine::g().add(new DotEggView());
   ViewEngine::g().add(new MeshEggView());
   ViewEngine::g().add(new TrianglesEggView());
   ViewEngine::g().add(new ComplexEggView());
-  ViewEngine::g().setCurrent("complexEgg");
+  ViewEngine::g().setCurrent("teapot");
 
   glutReshapeFunc(changeSize);
   glutMainLoop();

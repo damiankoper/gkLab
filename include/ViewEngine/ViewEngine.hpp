@@ -17,6 +17,9 @@ public:
     void render();
     void timer();
 
+    void setKeyboardRouter(std::function<bool(unsigned char key)> fn);
+    std::function<bool(unsigned char key)> keyboardRouter;
+
 private:
     ViewEngine();
     ViewEngine(const ViewEngine &);

@@ -39,3 +39,12 @@ void DrawingUtils::axis(float length)
     glVertex3fv(z_max);
     glEnd();
 }
+
+void DrawingUtils::text(float x, float y, void *font, const unsigned char *string)
+{
+
+    glColor3f(1., 1., 1.);
+    glRasterPos2f(x, y);
+
+    glutBitmapString(font, string);
+}

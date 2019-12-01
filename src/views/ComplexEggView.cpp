@@ -27,6 +27,7 @@ void ComplexEggView::onEnter()
 void ComplexEggView::render()
 {
     glLoadIdentity();
+    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0);
     DrawingUtils::axis();
     glRotated(-60., 1, 0, 0);
     glRotated(eggRotation, 1, 0, 0);
@@ -48,25 +49,16 @@ void ComplexEggView::idle()
 
 void ComplexEggView::onKey(unsigned char key, int x, int y)
 {
-    switch (key)
-    {
-    case '1':
-        ViewEngine::g().setCurrent("teapot");
-        break;
-    case '2':
-        ViewEngine::g().setCurrent("dotEgg");
-        break;
-    case '3':
-        ViewEngine::g().setCurrent("meshEgg");
-        break;
-    case '4':
-        ViewEngine::g().setCurrent("trianglesEgg");
-        break;
-    case '5':
-        ViewEngine::g().setCurrent("complexEgg");
-        break;
-    }
 }
+
+void ComplexEggView::onMouse(int btn, int state, int x, int y)
+{
+}
+
+void ComplexEggView::onMotion(GLsizei x, GLsizei y)
+{
+}
+
 void ComplexEggView::onLeave()
 {
 }

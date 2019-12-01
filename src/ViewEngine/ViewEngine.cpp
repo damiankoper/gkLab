@@ -26,8 +26,16 @@ void ViewEngine::setCurrent(std::string name)
     currentView = views[name];
 
     glutDisplayFunc([]() { ViewEngine::g().render(); });
-    glutKeyboardFunc([](unsigned char key, int x, int y) { ViewEngine::g().currentView->onKey(key, x, y); });
-    //glutIdleFunc([]() { ViewEngine::g().currentView->idle(); });
+    glutKeyboardFunc([](unsigned char key, int x, int y) {
+        if (!ViewEngine::g().keyboardRouter(key))
+            ViewEngine::g().currentView->onKey(key, x, y);
+    });
+    glutMouseFunc([](int btn, int state, int x, int y) {
+        ViewEngine::g().currentView->onMouse(btn, state, x, y);
+    });
+    glutMotionFunc([](GLsizei x, GLsizei y) {
+        ViewEngine::g().currentView->onMotion(x, y);
+    });
 
     currentView->onEnter();
 }
@@ -45,6 +53,7 @@ void ViewEngine::render()
     currentView->render();
 
     glFlush();
+    glutSwapBuffers();
 }
 
 void ViewEngine::timer()
@@ -55,4 +64,9 @@ void ViewEngine::timer()
                       ViewEngine::g().timer();
                   },
                   0);
+}
+
+void ViewEngine::setKeyboardRouter(std::function<bool(unsigned char key)> fn)
+{
+    keyboardRouter = fn;
 }

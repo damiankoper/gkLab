@@ -27,6 +27,7 @@ void TrianglesEggView::onEnter()
 void TrianglesEggView::render()
 {
     glLoadIdentity();
+    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0);
     DrawingUtils::axis();
     glRotated(-60., 1, 0, 0);
     glRotated(eggRotation, 1, 1, 0.5);
@@ -45,27 +46,16 @@ void TrianglesEggView::timer()
 void TrianglesEggView::idle()
 {
 }
-
 void TrianglesEggView::onKey(unsigned char key, int x, int y)
 {
-    switch (key)
-    {
-    case '1':
-        ViewEngine::g().setCurrent("teapot");
-        break;
-    case '2':
-        ViewEngine::g().setCurrent("dotEgg");
-        break;
-    case '3':
-        ViewEngine::g().setCurrent("meshEgg");
-        break;
-    case '4':
-        ViewEngine::g().setCurrent("trianglesEgg");
-        break;
-    case '5':
-        ViewEngine::g().setCurrent("complexEgg");
-        break;
-    }
+}
+
+void TrianglesEggView::onMouse(int btn, int state, int x, int y)
+{
+}
+
+void TrianglesEggView::onMotion(GLsizei x, GLsizei y)
+{
 }
 void TrianglesEggView::onLeave()
 {
