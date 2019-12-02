@@ -1,5 +1,6 @@
 #include "models/Egg.hpp"
 #include <math.h>
+#include "Color.hpp"
 #include "NumericUtils.hpp"
 Egg::Egg(int n)
 {
@@ -20,13 +21,25 @@ Egg::Egg(int n)
                 NumericUtils::randByte(),
                 NumericUtils::randByte(),
                 NumericUtils::randByte());
+            float nx = calcNX(u * step, v * step);
+            float ny = calcNY(u * step, v * step);
+            float nz = calcNZ(u * step, v * step);
+            float length = sqrt(nx * nx + ny * ny + nz * nz);
+            if (u > n/2)
+                length *= -1;
+            nx /= length;
+            ny /= length;
+            nz /= length;
+            p.nx = nx;
+            p.ny = ny;
+            p.nz = nz;
             vec.push_back(p);
         }
         points.push_back(vec);
     }
     if (n > 2)
     {
-        Point::Color color = points[0][0].color;
+        Color color = points[0][0].color;
         for (auto &&point : points[0])
         {
             point.color = color;
@@ -56,6 +69,47 @@ float Egg::calcZ(float u, float v)
 {
     float PIV = M_PI * v;
     return ((-90 * pow(u, 5) + 225 * pow(u, 4) - 270 * pow(u, 3) + 180 * pow(u, 2) - 45 * u) * sin(PIV));
+}
+
+float Egg::calcNX(float u, float v)
+{
+    return calcNYu(u, v) * calcNZv(u, v) - calcNZu(u, v) * calcNYv(u, v);
+}
+float Egg::calcNY(float u, float v)
+{
+    return calcNZu(u, v) * calcNXv(u, v) - calcNXu(u, v) * calcNZv(u, v);
+}
+float Egg::calcNZ(float u, float v)
+{
+    return calcNXu(u, v) * calcNYv(u, v) - calcNYu(u, v) * calcNXv(u, v);
+}
+float Egg::calcNXu(float u, float v)
+{
+    float PIV = M_PI * v;
+    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) - 45) * cos(PIV);
+}
+float Egg::calcNYu(float u, float v)
+{
+    return 640 * pow(u, 3), -960 * pow(u, 2) + 320 * u;
+}
+float Egg::calcNZu(float u, float v)
+{
+    float PIV = M_PI * v;
+    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) - 45) * sin(PIV);
+}
+float Egg::calcNXv(float u, float v)
+{
+    float PIV = M_PI * v;
+    return M_PI * (90 * pow(u, 5) - 225 * pow(u, 4) + 270 * pow(u, 3) - 180 * pow(u, 2) + 45 * u) * sin(PIV);
+}
+float Egg::calcNYv(float u, float v)
+{
+    return 0;
+}
+float Egg::calcNZv(float u, float v)
+{
+    float PIV = M_PI * v;
+    return -M_PI * (90 * pow(u, 5) - 225 * pow(u, 4) + 270 * pow(u, 3) - 180 * pow(u, 2) + 45 * u) * cos(PIV);
 }
 
 std::vector<std::vector<Point>> Egg::getPoints()
@@ -155,6 +209,7 @@ void Egg::renderMesh()
 
 void Egg::renderTriangles()
 {
+    material.apply();
     glBegin(GL_TRIANGLES);
     for (size_t i = 1; i < n; i++)
     {
@@ -198,6 +253,7 @@ void Egg::renderTriangles()
 
 void Egg::renderComplex()
 {
+    material.apply();
     for (size_t i = 0; i < n - 1; i++)
     {
         glBegin(GL_TRIANGLE_STRIP);
@@ -206,11 +262,11 @@ void Egg::renderComplex()
             points[i][j].drawWithColor();
             points[i + 1][j].drawWithColor();
         }
-         if (n - i - 1 >= 0 && n - i < n)
+        if (n - i - 1 >= 0 && n - i < n)
         {
             points[n - i][0].drawWithColor();
             points[n - i - 1][0].drawWithColor();
-        } 
+        }
         glEnd();
     }
     glBegin(GL_TRIANGLE_STRIP);

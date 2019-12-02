@@ -45,7 +45,9 @@ void ViewEngine::render()
     glEnable(GL_DEPTH_TEST);
     glDepthMask(GL_TRUE);
     glDepthFunc(GL_LEQUAL);
-    glDepthRange(0.0f, 1.0f);
+    glDepthRange(0.0f, 2.0f);
+    glShadeModel(GL_SMOOTH);
+    glEnable(GL_LIGHTING);
     glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClearDepth(1.0f);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);

@@ -1,6 +1,7 @@
 #pragma once
 #include "ViewEngine/IView.hpp"
 #include "models/Egg.hpp"
+#include "Light.hpp"
 class ComplexEggView : public IView
 {
 public:
@@ -20,4 +21,7 @@ public:
 private:
     Egg egg;
     float eggRotation = 0;
+
+    Light light1 = Light();
+    Light light2 = Light();
 };

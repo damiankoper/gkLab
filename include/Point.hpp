@@ -1,6 +1,6 @@
 #pragma once
 #include <GL/glut.h>
-
+#include <Color.hpp>
 class Point
 {
 
@@ -11,15 +11,12 @@ public:
     void callGlVertex3f();
     void callGlColor3f();
     void drawWithColor();
-
-    struct Color
-    {
-        GLubyte r = 255;
-        GLubyte g = 255;
-        GLubyte b = 255;
-    };
     float x = 0;
     float y = 0;
     float z = 0;
+    
+    float nx = 0;
+    float ny = 0;
+    float nz = 0;
     Color color;
 };

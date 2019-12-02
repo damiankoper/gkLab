@@ -1,5 +1,7 @@
 #pragma once
 #include <Point.hpp>
+#include <Light.hpp>
+#include <Material.hpp>
 #include "ViewEngine/IView.hpp"
 class TeapotView : public IView
 {
@@ -26,9 +28,20 @@ private:
     float xRotate = 0;
     float zRotate = 0;
     bool camMode = false;
+    bool lightMode = false;
     Point eye = Point(10, 0, 0, 255, 255, 255);
     Point center = Point(0, 0, 0, 255, 255, 255);
     float rDistance = 10.;
-    float zAngle = 0;
-    float xyAngle = 0;
+    float azimuth = 0;
+    float elevation = 0;
+    enum Mode
+    {
+        model = 1,
+        cam,
+        light
+    };
+    Mode mode = Mode::model;
+    Light light1 = Light();
+    Light light2 = Light();
+    Material teapotMaterial = Material();
 };

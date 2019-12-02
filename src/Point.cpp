@@ -16,6 +16,7 @@ void Point::callGlVertex3f()
 
 void Point::drawWithColor()
 {
-    glColor3ub(color.r, color.g, color.b);
+    color.apply();
+    glNormal3f(nx,ny,nz);
     glVertex3f(x, y, z);
 }
