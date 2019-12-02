@@ -11,10 +11,8 @@ public:
         static ViewEngine singleton;
         return singleton;
     }
-    c
 
-        void
-        add(IView *view);
+    void add(IView *view);
     void setCurrent(std::string name);
     void render();
     void timer();

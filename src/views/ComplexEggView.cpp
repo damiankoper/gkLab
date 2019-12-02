@@ -27,13 +27,13 @@ void ComplexEggView::onEnter()
     glLoadIdentity();
     light2.azimuth = M_PI / 4;
     light2.elevation = M_PI / 4;
-    light2.rDistance = 10;
+    light2.rDistance = 6;
     light2.color = Color(255, 0, 0);
     light2.init(GL_LIGHT0);
 
     light1.azimuth = -M_PI / 3;
     light1.elevation = M_PI / 3;
-    light1.rDistance = 9;
+    light1.rDistance = 7;
     light1.color = Color(0, 0, 255);
     light1.init(GL_LIGHT1);
     glPopMatrix();

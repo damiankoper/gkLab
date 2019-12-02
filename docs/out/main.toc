@@ -24,3 +24,4 @@
 \contentsline {subsubsection}{\numberline {3.2.3}Obr\IeC {\'o}t i zmiana pozycji \IeC {\'s}wiate\IeC {\l }}{16}{subsubsection.3.2.3}% 
 \contentsline {section}{\numberline {4}O\IeC {\'s}wietlenie}{16}{section.4}% 
 \contentsline {subsection}{\numberline {4.1}O\IeC {\'s}wietlenie imbryczka}{18}{subsection.4.1}% 
+\contentsline {subsection}{\numberline {4.2}O\IeC {\'s}wietlenie jajka}{19}{subsection.4.2}% 

@@ -25,7 +25,7 @@ Egg::Egg(int n)
             float ny = calcNY(u * step, v * step);
             float nz = calcNZ(u * step, v * step);
             float length = sqrt(nx * nx + ny * ny + nz * nz);
-            if (u > n / 2)
+            if (u >= n / 2)
                 length *= -1;
             nx /= length;
             ny /= length;

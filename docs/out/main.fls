@@ -311,6 +311,9 @@ INPUT ./img/teapot_1.png
 INPUT img/teapot_2.png
 INPUT ./img/teapot_2.png
 INPUT ./img/teapot_2.png
+INPUT img/egg_4.png
+INPUT ./img/egg_4.png
+INPUT ./img/egg_4.png
 INPUT /home/damian_koper/Documents/GitHub/gkLab/docs/src/../out/main.aux
 INPUT /home/damian_koper/Documents/GitHub/gkLab/docs/src/../out/main.out
 INPUT /home/damian_koper/Documents/GitHub/gkLab/docs/src/../out/main.out
