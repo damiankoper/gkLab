@@ -16,3 +16,11 @@
 \contentsline {subsubsection}{\numberline {2.3.1}Rysowanie punkt\IeC {\'o}w}{12}{subsubsection.2.3.1}% 
 \contentsline {subsection}{\numberline {2.4}Rysowanie siatki i~bry\IeC {\l }y}{13}{subsection.2.4}% 
 \contentsline {subsection}{\numberline {2.5}Animacja obrotu}{14}{subsection.2.5}% 
+\contentsline {section}{\numberline {3}Interakcja z u\IeC {\.z}ytkownikiem}{15}{section.3}% 
+\contentsline {subsection}{\numberline {3.1}Perspektywa}{15}{subsection.3.1}% 
+\contentsline {subsection}{\numberline {3.2}Transformacje widoku}{16}{subsection.3.2}% 
+\contentsline {subsubsection}{\numberline {3.2.1}Obr\IeC {\'o}t i skalowanie modelu}{16}{subsubsection.3.2.1}% 
+\contentsline {subsubsection}{\numberline {3.2.2}Obr\IeC {\'o}t i zmiana pozycji kamery}{16}{subsubsection.3.2.2}% 
+\contentsline {subsubsection}{\numberline {3.2.3}Obr\IeC {\'o}t i zmiana pozycji \IeC {\'s}wiate\IeC {\l }}{16}{subsubsection.3.2.3}% 
+\contentsline {section}{\numberline {4}O\IeC {\'s}wietlenie}{16}{section.4}% 
+\contentsline {subsection}{\numberline {4.1}O\IeC {\'s}wietlenie imbryczka}{18}{subsection.4.1}% 

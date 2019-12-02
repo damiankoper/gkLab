@@ -42,7 +42,7 @@ void ComplexEggView::onEnter()
 void ComplexEggView::render()
 {
     glLoadIdentity();
-    gluLookAt(5.0, 12.0, 12.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
+    gluLookAt(5.0, 8.0, 8.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
     DrawingUtils::axis();
     light2.drawSphere();
     light1.drawSphere();
@@ -51,16 +51,16 @@ void ComplexEggView::render()
     glTranslated(0, -5., 0);
     glScaled(0.8, 0.8, 0.8);
     glPointSize(10.);
-    egg.renderTriangles();
+    egg.renderComplex();
 }
 void ComplexEggView::timer()
 {
-   // eggRotation += 0.5;
-    light2.azimuth += 0.01;
+    eggRotation += 0.5;
+    //    light2.azimuth += 0.01;
     light2.elevation += 0.01;
     light2.calcPosition();
 
-    light1.azimuth += 0.01;
+    //light1.azimuth += 0.01;
     light1.elevation += 0.02;
     light1.calcPosition();
     if (eggRotation > 360)

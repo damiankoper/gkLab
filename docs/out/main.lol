@@ -9,3 +9,7 @@
 \contentsline {lstlisting}{\numberline {9}Rysowanie jajka z~punkt\IeC {\'o}w. Widok \lstinline {DottEggView}}{12}{lstlisting.9}% 
 \contentsline {lstlisting}{\numberline {10}Rysowanie jajka z~punkt\IeC {\'o}w. Model \lstinline {Egg}}{12}{lstlisting.10}% 
 \contentsline {lstlisting}{\numberline {11}Ustawianie zmiennej k\IeC {\k a}tu obrotu i przerysowanie klatki.}{14}{lstlisting.11}% 
+\contentsline {lstlisting}{\numberline {12}Metody interfejsu IView do obs\IeC {\l }ugi zdarze\IeC {\'n} myszy.}{15}{lstlisting.12}% 
+\contentsline {lstlisting}{\numberline {13}Definicja i wywo\IeC {\l }anie metody \lstinline {gluLookAt}.}{15}{lstlisting.13}% 
+\contentsline {lstlisting}{\numberline {14}Metoda \lstinline {apply} klasy materia\IeC {\l }u.}{17}{lstlisting.14}% 
+\contentsline {lstlisting}{\numberline {15}Metody inicjuj\IeC {\k a}ce \IeC {\'s}wiat\IeC {\l }o na scenie.}{17}{lstlisting.15}% 

@@ -9,10 +9,10 @@ Egg::Egg(int n)
     this->n = n;
     points.erase(points.begin(), points.end());
     float step = 1. / n;
-    for (size_t u = 0; u < n; u++)
+    for (size_t u = 0; u <= n; u++)
     {
         std::vector<Point> vec;
-        for (size_t v = 0; v < n; v++)
+        for (size_t v = 0; v <= n; v++)
         {
             Point p = Point(
                 calcX(u * step, v * step),
@@ -25,7 +25,7 @@ Egg::Egg(int n)
             float ny = calcNY(u * step, v * step);
             float nz = calcNZ(u * step, v * step);
             float length = sqrt(nx * nx + ny * ny + nz * nz);
-            if (u > n/2)
+            if (u > n / 2)
                 length *= -1;
             nx /= length;
             ny /= length;
@@ -36,6 +36,13 @@ Egg::Egg(int n)
             vec.push_back(p);
         }
         points.push_back(vec);
+    }
+    for (size_t u = 0; u <= n / 2; u++)
+    {
+        for (size_t v = 0; v <= n; v++)
+        {
+            points[u][0].color = points[u][n].color = points[n - u][0].color = points[n - u][n].color;
+        }
     }
     if (n > 2)
     {
@@ -86,7 +93,7 @@ float Egg::calcNZ(float u, float v)
 float Egg::calcNXu(float u, float v)
 {
     float PIV = M_PI * v;
-    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) - 45) * cos(PIV);
+    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) + 360 * u - 45) * cos(PIV);
 }
 float Egg::calcNYu(float u, float v)
 {
@@ -95,7 +102,7 @@ float Egg::calcNYu(float u, float v)
 float Egg::calcNZu(float u, float v)
 {
     float PIV = M_PI * v;
-    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) - 45) * sin(PIV);
+    return (-450 * pow(u, 4) + 900 * pow(u, 3) - 810 * pow(u, 2) + 360 * u - 45) * sin(PIV);
 }
 float Egg::calcNXv(float u, float v)
 {
@@ -254,30 +261,14 @@ void Egg::renderTriangles()
 void Egg::renderComplex()
 {
     material.apply();
-    for (size_t i = 0; i < n - 1; i++)
+    for (size_t i = 0; i < n; i++)
     {
         glBegin(GL_TRIANGLE_STRIP);
-        for (size_t j = 0; j < n; j++)
+        for (size_t j = 0; j <= n; j++)
         {
             points[i][j].drawWithColor();
             points[i + 1][j].drawWithColor();
         }
-        if (n - i - 1 >= 0 && n - i < n)
-        {
-            points[n - i][0].drawWithColor();
-            points[n - i - 1][0].drawWithColor();
-        }
         glEnd();
     }
-    glBegin(GL_TRIANGLE_STRIP);
-    points[0][0].drawWithColor();
-    points[1][n - 1].drawWithColor();
-    for (size_t i = 0; i < n; i++)
-    {
-        points[0][0].drawWithColor();
-        points[n - 1][i].drawWithColor();
-    }
-    points[0][0].drawWithColor();
-    points[1][0].drawWithColor();
-    glEnd();
 }

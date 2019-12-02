@@ -3,7 +3,7 @@
 \subsection{Bazowa aplikacja}
 Aplikacja bazowa, po zainicjowaniu niezbędnych elementów biblioteki \textit{GLUT}, oddaje sterowanie do utworzonej klasy \lstinline{ViewEngine}. Przechowuje one referencje na klasy, będące niezależnymi widokami. Widoki te posiadają zdefiniowane własne funkcje odpowiedzialne za renderowanie, obsługę zdarzeń, animację oraz obsługę zdarzeń związanych z~cyklem życia widoku. Poprzez zmianę wartości wskaźnika na aktualny widok w klasie \lstinline{ViewEngine}, funkcje przekazane do biblioteki \textit{GLUT} zastępowane są funkcjami właściwego widoku. Każdy widok musi implementować interfejs \lstinline{iView} zdefiniowany następująco:
 
-\begin{lstlisting}[language=C++, caption=Interfejs IView.]
+\begin{lstlisting}[language=C++, caption=Interfejs IView., label={lst:iView}]
 class IView
 {
 public:
