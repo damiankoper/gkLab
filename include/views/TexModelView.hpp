@@ -1,13 +1,12 @@
 #pragma once
 #include "ViewEngine/IView.hpp"
-#include "models/Egg.hpp"
-#include "Light.hpp"
+#include "models/TexModel.hpp"
 #include "Texture.hpp"
-class ComplexEggView : public IView
+class TexModelView : public IView
 {
 public:
-    ComplexEggView();
-    ~ComplexEggView();
+    TexModelView();
+    ~TexModelView();
     std::string getName();
     void init();
     void onEnter();
@@ -20,10 +19,7 @@ public:
     void onLeave();
 
 private:
-    Egg egg;
+    TexModel texModel;
+    Texture texture = Texture("src/textures/paput.tga");
     float eggRotation = 0;
-    Texture texture = Texture("src/textures/zoltek_smol_very.tga");
-
-    Light light1 = Light();
-    Light light2 = Light();
 };

@@ -31,16 +31,16 @@ void Light::calcPosition()
 
 void Light::calcColor()
 {
-  ambient[0] = color.r / 255. * 0.1;
-  ambient[1] = color.g / 255. * 0.1;
-  ambient[2] = color.b / 255. * 0.1;
+  ambient[0] = color.r / 255. * 0.3;
+  ambient[1] = color.g / 255. * 0.3;
+  ambient[2] = color.b / 255. * 0.3;
   diffuse[0] = color.r / 255.;
   diffuse[1] = color.g / 255.;
   diffuse[2] = color.b / 255.;
   specular[0] = color.r / 255.;
   specular[1] = color.g / 255.;
   specular[2] = color.b / 255.;
-  glLightfv(n, GL_AMBIENT, ambient);
+  6 glLightfv(n, GL_AMBIENT, ambient);
   glLightfv(n, GL_DIFFUSE, diffuse);
   glLightfv(n, GL_SPECULAR, specular);
 }
@@ -50,6 +50,6 @@ void Light::drawSphere()
   glPushMatrix();
   glTranslated(position[0], position[1], position[2]);
   color.apply();
-  glutSolidSphere(position[3]*0.3, 30, 30);
+  glutSolidSphere(position[3] * 0.3, 30, 30);
   glPopMatrix();
 }

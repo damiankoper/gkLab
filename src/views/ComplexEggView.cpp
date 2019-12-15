@@ -23,6 +23,8 @@ void ComplexEggView::init()
 
 void ComplexEggView::onEnter()
 {
+    glEnable(GL_LIGHTING);
+    glEnable(GL_TEXTURE_2D);
     glPushMatrix();
     glLoadIdentity();
     light2.azimuth = M_PI / 4;
@@ -51,6 +53,7 @@ void ComplexEggView::render()
     glTranslated(0, -5., 0);
     glScaled(0.8, 0.8, 0.8);
     glPointSize(10.);
+    texture.apply();
     egg.renderComplex();
 }
 void ComplexEggView::timer()
@@ -86,6 +89,6 @@ void ComplexEggView::onMotion(GLsizei x, GLsizei y)
 
 void ComplexEggView::onLeave()
 {
-    glDisable(GL_LIGHT0);
-    glDisable(GL_LIGHT1);
+    glDisable(GL_TEXTURE_2D);
+    glDisable(GL_LIGHTING);
 }

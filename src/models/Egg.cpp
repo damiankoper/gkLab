@@ -20,7 +20,9 @@ Egg::Egg(int n)
                 calcZ(u * step, v * step),
                 NumericUtils::randByte(),
                 NumericUtils::randByte(),
-                NumericUtils::randByte());
+                NumericUtils::randByte(),
+                fmod(v * step + 0, 1),
+                fmod(u * step + 0.25, 1));
             float nx = calcNX(u * step, v * step);
             float ny = calcNY(u * step, v * step);
             float nz = calcNZ(u * step, v * step);

@@ -8,6 +8,7 @@
 #include "views/MeshEggView.hpp"
 #include "views/TrianglesEggView.hpp"
 #include "views/ComplexEggView.hpp"
+#include "views/TexModelView.hpp"
 using namespace std;
 
 void changeSize(GLsizei horizontal, GLsizei vertical)
@@ -30,7 +31,10 @@ int main(int argc, char **argv)
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
   glutInitWindowPosition(50, 25);
   glutInitWindowSize(1280, 720);
-  glutCreateWindow("Lab 2");
+  glutCreateWindow("Lab 5");
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
   ViewEngine::g().setKeyboardRouter([](unsigned char key) {
     switch (key)
@@ -50,6 +54,9 @@ int main(int argc, char **argv)
     case '5':
       ViewEngine::g().setCurrent("complexEgg");
       break;
+    case '6':
+      ViewEngine::g().setCurrent("texModel");
+      break;
     default:
       return false;
     }
@@ -61,7 +68,8 @@ int main(int argc, char **argv)
   ViewEngine::g().add(new MeshEggView());
   ViewEngine::g().add(new TrianglesEggView());
   ViewEngine::g().add(new ComplexEggView());
-  ViewEngine::g().setCurrent("teapot");
+  ViewEngine::g().add(new TexModelView());
+  ViewEngine::g().setCurrent("texModel");
 
   glutReshapeFunc(changeSize);
   glutMainLoop();

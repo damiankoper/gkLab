@@ -23,6 +23,7 @@ void TeapotView::init()
 
 void TeapotView::onEnter()
 {
+    glEnable(GL_LIGHTING);
     light1.position[0] = 10;
     light1.color = Color(0, 0, 255);
     light1.init(GL_LIGHT0);
@@ -195,4 +196,5 @@ void TeapotView::onMotion(GLsizei x, GLsizei y)
 
 void TeapotView::onLeave()
 {
+    glDisable(GL_LIGHTING);
 }

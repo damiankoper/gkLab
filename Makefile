@@ -285,6 +285,33 @@ src/Point.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Point.cpp.s
 .PHONY : src/Point.cpp.s
 
+src/Texture.o: src/Texture.cpp.o
+
+.PHONY : src/Texture.o
+
+# target to build an object file
+src/Texture.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Texture.cpp.o
+.PHONY : src/Texture.cpp.o
+
+src/Texture.i: src/Texture.cpp.i
+
+.PHONY : src/Texture.i
+
+# target to preprocess a source file
+src/Texture.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Texture.cpp.i
+.PHONY : src/Texture.cpp.i
+
+src/Texture.s: src/Texture.cpp.s
+
+.PHONY : src/Texture.s
+
+# target to generate assembly for a file
+src/Texture.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/Texture.cpp.s
+.PHONY : src/Texture.cpp.s
+
 src/ViewEngine/ViewEngine.o: src/ViewEngine/ViewEngine.cpp.o
 
 .PHONY : src/ViewEngine/ViewEngine.o
@@ -365,6 +392,33 @@ src/models/Egg.s: src/models/Egg.cpp.s
 src/models/Egg.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/models/Egg.cpp.s
 .PHONY : src/models/Egg.cpp.s
+
+src/models/TexModel.o: src/models/TexModel.cpp.o
+
+.PHONY : src/models/TexModel.o
+
+# target to build an object file
+src/models/TexModel.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/models/TexModel.cpp.o
+.PHONY : src/models/TexModel.cpp.o
+
+src/models/TexModel.i: src/models/TexModel.cpp.i
+
+.PHONY : src/models/TexModel.i
+
+# target to preprocess a source file
+src/models/TexModel.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/models/TexModel.cpp.i
+.PHONY : src/models/TexModel.cpp.i
+
+src/models/TexModel.s: src/models/TexModel.cpp.s
+
+.PHONY : src/models/TexModel.s
+
+# target to generate assembly for a file
+src/models/TexModel.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/models/TexModel.cpp.s
+.PHONY : src/models/TexModel.cpp.s
 
 src/views/ComplexEggView.o: src/views/ComplexEggView.cpp.o
 
@@ -474,6 +528,33 @@ src/views/TeapotView.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TeapotView.cpp.s
 .PHONY : src/views/TeapotView.cpp.s
 
+src/views/TexModelView.o: src/views/TexModelView.cpp.o
+
+.PHONY : src/views/TexModelView.o
+
+# target to build an object file
+src/views/TexModelView.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TexModelView.cpp.o
+.PHONY : src/views/TexModelView.cpp.o
+
+src/views/TexModelView.i: src/views/TexModelView.cpp.i
+
+.PHONY : src/views/TexModelView.i
+
+# target to preprocess a source file
+src/views/TexModelView.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TexModelView.cpp.i
+.PHONY : src/views/TexModelView.cpp.i
+
+src/views/TexModelView.s: src/views/TexModelView.cpp.s
+
+.PHONY : src/views/TexModelView.s
+
+# target to generate assembly for a file
+src/views/TexModelView.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/views/TexModelView.cpp.s
+.PHONY : src/views/TexModelView.cpp.s
+
 src/views/TrianglesEggView.o: src/views/TrianglesEggView.cpp.o
 
 .PHONY : src/views/TrianglesEggView.o
@@ -528,6 +609,9 @@ help:
 	@echo "... src/Point.o"
 	@echo "... src/Point.i"
 	@echo "... src/Point.s"
+	@echo "... src/Texture.o"
+	@echo "... src/Texture.i"
+	@echo "... src/Texture.s"
 	@echo "... src/ViewEngine/ViewEngine.o"
 	@echo "... src/ViewEngine/ViewEngine.i"
 	@echo "... src/ViewEngine/ViewEngine.s"
@@ -537,6 +621,9 @@ help:
 	@echo "... src/models/Egg.o"
 	@echo "... src/models/Egg.i"
 	@echo "... src/models/Egg.s"
+	@echo "... src/models/TexModel.o"
+	@echo "... src/models/TexModel.i"
+	@echo "... src/models/TexModel.s"
 	@echo "... src/views/ComplexEggView.o"
 	@echo "... src/views/ComplexEggView.i"
 	@echo "... src/views/ComplexEggView.s"
@@ -549,6 +636,9 @@ help:
 	@echo "... src/views/TeapotView.o"
 	@echo "... src/views/TeapotView.i"
 	@echo "... src/views/TeapotView.s"
+	@echo "... src/views/TexModelView.o"
+	@echo "... src/views/TexModelView.i"
+	@echo "... src/views/TexModelView.s"
 	@echo "... src/views/TrianglesEggView.o"
 	@echo "... src/views/TrianglesEggView.i"
 	@echo "... src/views/TrianglesEggView.s"

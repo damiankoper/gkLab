@@ -27,7 +27,7 @@ void MeshEggView::onEnter()
 void MeshEggView::render()
 {
     glLoadIdentity();
-    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0);
+    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
     //DrawingUtils::axis();
     glRotated(-60., 1, 0, 0);
     glRotated(eggRotation, 1, 0.5, 1);

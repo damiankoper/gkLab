@@ -27,7 +27,7 @@ void DotEggView::onEnter()
 void DotEggView::render()
 {
     glLoadIdentity();
-    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, -1.0);
+    gluLookAt(5.0, 10.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
     glRotated(-60., 1, 0, 0);
     glRotated(eggRotation, 1, 1, 1);
     glTranslated(0, -5., 0);

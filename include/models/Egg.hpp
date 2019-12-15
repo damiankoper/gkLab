@@ -6,7 +6,7 @@ class Egg
 {
 
 public:
-    Egg(int n = 256);
+    Egg(int n = 64);
     ~Egg();
 
     std::vector<std::vector<Point>> getPoints();
