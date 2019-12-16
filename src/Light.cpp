@@ -40,7 +40,7 @@ void Light::calcColor()
   specular[0] = color.r / 255.;
   specular[1] = color.g / 255.;
   specular[2] = color.b / 255.;
-  6 glLightfv(n, GL_AMBIENT, ambient);
+  glLightfv(n, GL_AMBIENT, ambient);
   glLightfv(n, GL_DIFFUSE, diffuse);
   glLightfv(n, GL_SPECULAR, specular);
 }
