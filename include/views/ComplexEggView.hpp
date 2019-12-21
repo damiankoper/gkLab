@@ -22,7 +22,7 @@ public:
 private:
     Egg egg;
     float eggRotation = 0;
-    Texture texture = Texture("src/textures/zoltek_smol_very.tga");
+    Texture texture = Texture("src/textures/D5_t.tga");
 
     Light light1 = Light();
     Light light2 = Light();

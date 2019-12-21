@@ -23,6 +23,8 @@ void TexModelView::init()
 void TexModelView::onEnter()
 {
     glEnable(GL_TEXTURE_2D);
+    glEnable(GL_CULL_FACE);
+    glCullFace(GL_FRONT);
 }
 
 void TexModelView::render()
@@ -30,9 +32,15 @@ void TexModelView::render()
     glLoadIdentity();
     gluLookAt(5.0, 5.0, 10.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
     DrawingUtils::axis();
+    glPushMatrix();
     glRotated(eggRotation, 0, 0, 1);
     glPointSize(10.);
-    texture.apply();
+    texture1.apply();
+    texModel.renderTriangles();
+    glPopMatrix();
+    glRotated(eggRotation+180, 0, 0, 1);
+    glScaled(0.5,0.5,0.5);
+    texture2.apply();
     texModel.renderTriangles();
 }
 void TexModelView::timer()
@@ -60,4 +68,5 @@ void TexModelView::onMotion(GLsizei x, GLsizei y)
 void TexModelView::onLeave()
 {
     glDisable(GL_TEXTURE_2D);
+    glDisable(GL_CULL_FACE);
 }

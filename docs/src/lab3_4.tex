@@ -39,7 +39,7 @@ Pozycja kamery zapisywana jest jako zmienne określające środek sfery w poło�
 Aplikacja pozwala na manipulowanie kątami, promieniem, przemieszczeniem oraz odległością kamery od środka sfery.
 \subsubsection{Obrót i zmiana pozycji świateł}
 Światło reprezentowane jest jako klasa \lstinline{Light}. Światła, podobnie jak kamera, rozmieszczone są na powierzchni sfery ze środkiem w centrum układu współrzędnych. W trybie manipulacji źródłem światła można zmienić położenie jednego z dwóch świateł.
-
+\clearpage
 \section{Oświetlenie}
 W celu odpowiedniego oddziaływania źródeł światła z powierzchnią modeli zdefiniowano dla nich materiał reprezentowany przez klasę \lstinline{Material}. Zawiera ona parametry \lstinline{ambient}, \lstinline{diffuse}, \lstinline{specular} i \lstinline{shininess}, definiujące kolejno współczynniki dla światła otoczenia, rozproszonego, odbitego oraz połysk powierzchni. Materiał używany jest poprzez wywołanie metody \lstinline{apply} pokazaną na listingu \ref{lst:mt:apply}.
 
@@ -71,6 +71,8 @@ void Light::calcColor()
     glLightfv(n, GL_DIFFUSE, diffuse);
     glLightfv(n, GL_SPECULAR, specular);
 }
+
+
 void Light::init(int n)
 {
   this->n = n;
@@ -89,7 +91,7 @@ Klasę \lstinline{Light} opisuje siedem parametrów: pozycja światła, współc
 Na scenie został umieszczony imbryczek razem z dwoma źródłami światła. Ponieważ domyślnie nie są one reprezentowane przez żaden widzialny obiekt, ich pozycja została pokazana za pomocą sfer.
 \begin{figure}[h]
     \centering
-    \includegraphics[width=0.8\linewidth, trim={0cm 0 0cm 0},clip]{img/teapot_1.png}
+    \includegraphics[width=0.55\linewidth, trim={0cm 3cm 0cm 3cm},clip]{img/teapot_1.png}
     \caption{Widok imbryczka z zastosowaną zmianą obrotu i skali modelu, zmianą położenia kamery, oświetlonego dwoma źródłami światła.}
 \end{figure}
 \begin{figure}[H]
@@ -98,7 +100,7 @@ Na scenie został umieszczony imbryczek razem z dwoma źródłami światła. Pon
     \caption{Imbryczek w innej pozycji, widziany z innego punktu. Barwa światła znajdującego się bliżej kamery została zmieniona na zieloną.}
 \end{figure}
 \subsection{Oświetlenie jajka}
-Wokół obracającego się modelu jajka zostały umieszczone dwa orbitujące z różnym kątem i prędkością źródła światła.
+Wokół obracającego się modelu jajka zostały umieszczone dwa orbitujące pod różnym kątem i z różną prędkością źródła światła.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth, trim={0cm 6cm 0cm 0.5cm},clip]{img/egg_4.png}

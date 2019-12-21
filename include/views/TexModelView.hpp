@@ -20,6 +20,7 @@ public:
 
 private:
     TexModel texModel;
-    Texture texture = Texture("src/textures/paput.tga");
+    Texture texture1 = Texture("src/textures/paput.tga");
+    Texture texture2 = Texture("src/textures/D5_t.tga");
     float eggRotation = 0;
 };

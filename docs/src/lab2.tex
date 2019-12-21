@@ -38,7 +38,7 @@ Generowanie punktów dla wartości parametrów funkcji z~przedziału $<0;1>$ zak
 \subsubsection{Model}
 Każdy model zdefiniowany jest za pomocą klasy, która przyjmuje parametry określające jego wygląd i~zachowania. W przypadku klasy \lstinline{Egg} jest to ilość iteracji pętli generowania punktów, co przekłada się na poziom wygładzenia modelu. Klasa modelu odpowiedzialna jest również za jego rysowanie w różnych wariantach.
 
-Dla czytelności kodu stworzona została klasa \lstinline{Point}, która przechowuje współrzędne punktu, jego kolor, oraz odpowiedzialna jest rysowanie samego siebie.
+Dla czytelności kodu stworzona została klasa \lstinline{Point}, która przechowuje współrzędne punktu, jego kolor, oraz odpowiedzialna jest za rysowanie samego siebie.
 
 \begin{lstlisting}[language=C++, caption=Nagłówek klasy Point.]
 class Point
@@ -58,7 +58,7 @@ public:
     };
     float x = 0;
     float y = 0;
-    float z~= 0;
+    float z = 0;
     Color color;
 };
 \end{lstlisting}
@@ -85,7 +85,7 @@ private:
 \newpage
 \subsection{Rysowanie modelu za pomocą punktów, siatki i~jako bryły}
 
-W utworzonej aplikacji rysowanie odbywa się w metodzie \lstinline{IView::render()} modelu. Znajduje się tam również opisana niżej procedura transformacji i~animacji modelu.
+W utworzonej aplikacji rysowanie odbywa się w metodzie \lstinline{IView::render()} widoku. Znajduje się tam również opisana niżej procedura transformacji i~animacji modelu.
 \subsubsection{Rysowanie punktów}
 Rysowanie punktów obywa się z~wykorzystanie prymitywu \lstinline{GL_POINTS} biblioteki \textit{OpenGL}. Wszystkie punkty podawane są do funkcji w dowolnej kolejności.
 
