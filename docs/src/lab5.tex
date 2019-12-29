@@ -1,7 +1,7 @@
 \newpage
 \section{Teksturowanie}
-Teksturowanie polega na nałożeniu na powierzchnię obiektu mapy bitowej. Mapa ta, by być właściwie nałożona na obiekt, musi być odpowiednio na nim odwzorowana. OpenGL pozwana na określić odwzorowanie punktu trójkąta na punkt tekstury. Tekstura ładowana jest w postaci kwadratowej mapy bitowej o wielkości będącej potęgą liczby 2. W programie zastosowano tekstury z rastrowych plików graficznych w formacie \textit{TARGA} (.tga). 
-Korzystanie z tekstur wymagało skonfigurowani odpowiednich parametrów oraz wywołania metody \lstinline{glEnable} z parametrem w odpowiednim widoku (listing \ref{lst:texturee}). Zastosowano opcję \textit{Cull Face}, która odpowiada za teksturowanie tylko jednej strony powierzchni, co redukuje obliczenia. W przypadku rysowania trójkątów stronę powierzchni określa kolejność rysowania wierzchołków.
+Teksturowanie polega na nałożeniu na powierzchnię obiektu mapy bitowej. Mapa ta, by być właściwie nałożona na obiekt, musi być odpowiednio na nim odwzorowana. OpenGL pozwana określić odwzorowanie punktu trójkąta na punkt tekstury. Tekstura ładowana jest w postaci kwadratowej mapy bitowej o wielkości będącej potęgą liczby 2. W programie zastosowano tekstury z rastrowych plików graficznych w formacie \textit{TARGA} (.tga). 
+Korzystanie z tekstur wymagało skonfigurowani odpowiednich parametrów oraz wywołania metody \lstinline{glEnable} z parametrem w odpowiednim widoku (listing \ref{lst:texturee}). Zastosowano opcję \textit{Cull Face}, która odpowiada za teksturowanie tylko jednej strony powierzchni, co redukuje obliczenia. W przypadku rysowania trójkątów, stronę powierzchni określa kolejność rysowania wierzchołków.
 
 \begin{lstlisting}[language=C++, caption=Konfiguracja ustawień teksturowania., label={lst:texturee}]
 glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
